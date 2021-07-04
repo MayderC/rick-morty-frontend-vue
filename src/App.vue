@@ -1,7 +1,8 @@
 <template lang="pug">
-rm-navbar
-router-view
-rm-footer
+main
+  rm-navbar
+  router-view
+  rm-footer
 </template>
 
 <script>
@@ -19,11 +20,11 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap')
 
+html
+  scroll-behavior: smooth
+
 body
   font-family: 'Yomogi', cursive
   margin: 0
   background: #434465
-
-#app
-  min-height: 100vh
 </style>

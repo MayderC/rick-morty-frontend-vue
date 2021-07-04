@@ -25,6 +25,8 @@ export default {
 
   methods: {
     changePage(id) {
+      window.scrollTo(0, 0);
+
       this.$emit("change", id);
     },
   },
@@ -37,6 +39,7 @@ export default {
 
 .buttom
   margin-top: 50px
+  padding: 0 40px
 
 .buttom__list
   margin: 0

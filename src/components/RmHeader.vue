@@ -5,7 +5,7 @@
     img(src="../assets/morty.png").header__img
   .header__item.item--txt
     p.header__txt Aplicación web desarrollada en Vuejs para consumir 
-      |la api publica de Rick and Morty, creada por 
+      |la api publica de Rick and Morty, app creada por 
       a(href="https://mayder.codes/" target="_blank" ).header__link @MayderC
 
 </template>
@@ -20,11 +20,15 @@ export default {
 .header
   width: 80%
   margin: auto
-  height: 100vh
+  min-height: 90vh
   display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  align-items: center
 
 .header__item
-  width: 50%
+  width: 600px
+  min-width: 400px
   height: 100%
   padding: 30px
   display: flex

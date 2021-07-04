@@ -1,7 +1,7 @@
 <template lang="pug">
 
 footer.footer
-  
+  p Aplicaión en desarrollo
 
 </template>
 
@@ -19,4 +19,13 @@ export default {
   width: 100%
   background-color: #262742
   box-shadow: 0px 10px 40px #15121b
+  display: flex
+  align-items: center
+  justify-content: center
+
+  p
+    color: white
+    font-size: 30px
+    font-weight: bold
+    text-align: center
 </style>
