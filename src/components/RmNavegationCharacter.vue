@@ -35,6 +35,8 @@ export default {
 
 <style lang="sass" scoped>
 
+.buttom
+  margin-top: 50px
 
 .buttom__list
   margin: 0
