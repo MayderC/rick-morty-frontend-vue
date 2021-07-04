@@ -52,13 +52,10 @@ export default {
 
 
 .container
+  min-height: 70vh
   width: 85%
   margin: auto
   position: relative
-
-
-
-
 
 
   .container__footer

@@ -41,6 +41,7 @@ export default {
   padding: 0
   display: flex
   justify-content: space-around
+  flex-wrap: wrap
   margin: auto
   gap: 20px
 

@@ -23,4 +23,7 @@ body
   font-family: 'Yomogi', cursive
   margin: 0
   background: #434465
+
+#app
+  min-height: 100vh
 </style>
