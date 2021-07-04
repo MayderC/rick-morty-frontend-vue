@@ -1,7 +1,7 @@
 <template lang="pug">
 
 footer.footer
-  p Aplicaión en desarrollo
+  p Aplicación en desarrollo
 
 </template>
 
