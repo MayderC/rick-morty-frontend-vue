@@ -1,7 +1,7 @@
 <template lang="pug">
 
 nav.navbar
-  router-link(to="home")
+  router-link(to="/")
     .img-container 
       img(src="../assets/title.png")
 

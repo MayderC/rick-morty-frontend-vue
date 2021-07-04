@@ -1,6 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import RmHome from "@/views/RmHome.vue";
-import About from "@/views/About.vue";
+import RmCharacter from "@/views/RmCharacter"
 
 const routes = [
   {
@@ -9,10 +9,15 @@ const routes = [
     component: RmHome,
   },
   {
-    path: "/about",
-    name: "About",
-    component: About,
+    path: "/character",
+    name: "character",
+    component: RmCharacter,
   },
+  {
+    path: "/character",
+    name: "pages",
+    component: RmCharacter
+  }
 ];
 
 const router = createRouter({
