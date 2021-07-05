@@ -52,4 +52,18 @@ export default {
 .header__txt
   color: #fff
   font-size: 30px
+
+
+
+@media (max-width: 650px)
+  .header__item
+    width: 300px
+    min-width: 250px
+    background: red
+
+@media (max-width: 350px)
+  .header__item
+    width: 260px
+    min-width: 230px
+    background: red
 </style>

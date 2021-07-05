@@ -131,6 +131,10 @@ img:hover
     height: 300px
     margin: auto
 
+  .img-container
+    position: relative
+    left: 40px
+
 
   .menu__btn-bar, .menu__btn-bar:before, .menu__btn-bar:after
     display: block
