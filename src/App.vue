@@ -23,6 +23,7 @@ export default {
 html
   scroll-behavior: smooth
 
+
 body
   font-family: 'Yomogi', cursive
   margin: 0

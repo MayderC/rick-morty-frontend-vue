@@ -124,6 +124,7 @@ img:hover
 @media (max-width: 650px)
   .navbar
     display: block
+    overflow: hidden
   .navbar__list
     display: none
   .menu--responsive
@@ -133,7 +134,8 @@ img:hover
 
   .img-container
     position: relative
-    left: 40px
+    left: 20px
+    max-width: 100%
 
 
   .menu__btn-bar, .menu__btn-bar:before, .menu__btn-bar:after
