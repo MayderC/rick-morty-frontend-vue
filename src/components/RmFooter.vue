@@ -14,7 +14,6 @@ export default {
 <style lang="sass" scoped>
 
 .footer
-  margin-top: 50px
   height: 150px
   width: 100%
   background-color: #262742

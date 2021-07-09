@@ -62,9 +62,8 @@ img
   border-top-left-radius: 10px
   border-bottom-left-radius: 10px
 
-
 .container__item
-  margin: 20px
+  margin: 10px
   padding: 10px
   height: 220px
   width: 560px
@@ -79,4 +78,20 @@ img
   display: flex
   flex-direction: column
   justify-content: space-evenly
+
+@media (max-width: 650px)
+  .container__item
+    flex-direction: column
+    min-width: 220px
+    width: 220px
+    height: auto
+  
+  img 
+    border-radius: 10px
+
+  .container__info
+    padding-top: 15px
+    padding-bottom: 15px
+
+
 </style>

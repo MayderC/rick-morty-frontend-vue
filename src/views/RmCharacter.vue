@@ -1,9 +1,15 @@
 <template lang="pug">
+
 .container 
+
   div.container__body
       rm-card(v-for="d in data" :info="d",)
+
   .container__footer
     rm-navegation-character(v-on:change="getNew")
+
+
+    
 </template>
 <script>
 import character from "../api/character";
@@ -53,10 +59,10 @@ export default {
 
 
 .container
+  padding-top: 50px
   min-height: 70vh
   width: 100%
   margin: auto
-  margin-top: 50px
   position: relative
 
 .container__body
@@ -73,4 +79,7 @@ export default {
     display: flex
     align-items: center
     justify-content: center
+
+
+
 </style>

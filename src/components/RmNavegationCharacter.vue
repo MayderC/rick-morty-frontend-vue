@@ -40,6 +40,7 @@ export default {
 .buttom
   margin-top: 50px
   padding: 0 40px
+  margin-bottom: 50px
 
 .buttom__list
   margin: 0
