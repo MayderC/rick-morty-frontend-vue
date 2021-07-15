@@ -1,9 +1,9 @@
 <template lang="pug">
 nav.buttom
   ul.buttom__list
-    li(v-for="b in btnLinks").buttom__item
-      router-link(:to="{ name: 'pages'}" @click="changePage(b+1)").buttom__link 
-        p.buttom__txt {{b+1}}
+    li(v-for="b in button").buttom__item
+      router-link(:to="{ name: 'pages'}" @click="changePage(b)").buttom__link 
+        p.buttom__txt {{b}}
 
         
 </template>
@@ -11,27 +11,39 @@ nav.buttom
 <script>
 export default {
   name: "RmNavegationCharacter",
-  created() {
-    const n = 34;
-    var arr = Array.from(Array(n).keys(+1));
-    this.btnLinks = arr;
-  },
+
+  props:{
+    button: { type: Object, required: true},
+    },
   data() {
     return {
       btnLinks: [],
-      current: null,
     };
   },
 
+  computed:{
+    
+
+
+  },
+
+  created() {
+
+    console.log(this.button.next)
+    
+  },
+
+
   methods: {
     changePage(id) {
-      window.scrollTo(0, 0);
-
+      //window.scrollTo(0, 0);
+      console.log(this.button.current)
       this.$emit("change", id);
     },
   },
 
-  props: [],
+
+
 };
 </script>
 

@@ -56,7 +56,7 @@ h2, .info--txt,.location-name, .origin
   background-color: red
 .green
   background-color: #2BE833
-
+  
 img
   max-height: 100%
   border-top-left-radius: 10px
