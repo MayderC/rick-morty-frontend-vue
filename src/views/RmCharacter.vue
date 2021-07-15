@@ -1,7 +1,7 @@
 <template lang="pug">
 
 .container 
-
+  rm-navegation-character(v-on:change="getNew" v-bind:button="buttons")
   div.container__body
       rm-card(v-for="d in data" :info="d",)
 
@@ -70,7 +70,8 @@ export default {
         .catch((error) => console.log(error));
     },
 
-
+    //Esta funcion se llama en created y en el evento emitido por el componente hijo
+    //RmNavegationCharacter,
     updateButtonsNav(){
       // Funcion wtacher de info, informacion de botontes, next y prev
       // tambien se usa cuando se da click desde el componente hijo, para actualizar 
@@ -83,6 +84,8 @@ export default {
         this.buttons.current = current
         this.buttons.next = current+1
 
+        // define los valres de prev, cuando no existe porque el actual es el primero, es null
+        // en cada iteracion cuando si existe sera el actual -1
         if(current >= 2)this.buttons.prev = current -1
         if(current == 1)this.buttons.prev = null
 

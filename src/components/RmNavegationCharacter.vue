@@ -1,10 +1,11 @@
 <template lang="pug">
-nav.buttom
-  ul.buttom__list
-    li(v-for="b in button").buttom__item
-      router-link(:to="{ name: 'pages'}" @click="changePage(b)").buttom__link 
-        p.buttom__txt {{b}}
-
+nav.navegation
+  ul.navegation__list
+    li(v-for="b, i in button").navegation__item
+      router-link(:to="{ name: 'pages'}"   @click="changePage(b)").navegation__link
+        div.buttons
+          p(:class="{current: i == 'current' }").navegation__txt {{b}}
+          p.buttons__name {{i}}
         
 </template>
 
@@ -21,24 +22,18 @@ export default {
     };
   },
 
-  computed:{
-    
-
-
-  },
-
-  created() {
-
-    console.log(this.button.next)
-    
-  },
-
-
   methods: {
     changePage(id) {
-      //window.scrollTo(0, 0);
-      console.log(this.button.current)
-      this.$emit("change", id);
+
+      if(id && id != this.button.current){
+        window.scrollTo(0, 0);
+
+        console.log(this.button)
+
+        console.log(id)
+        this.$emit("change", id);
+      }
+
     },
   },
 
@@ -49,32 +44,33 @@ export default {
 
 <style lang="sass" scoped>
 
-.buttom
+
+.navegation
   margin-top: 50px
   padding: 0 40px
   margin-bottom: 50px
 
-.buttom__list
+.navegation__list
   margin: 0
   padding: 0
   display: flex
-  justify-content: space-around
+  justify-content: center
   flex-wrap: wrap
   margin: auto
-  gap: 20px
+  gap: 30px
 
-.buttom__item
+.navegation__item
   list-style: none
 
 
-.buttom__link
+.navegation__link
   text-decoration: none
   color: black
   font-size: 16px
   font-weight: bold
 
 
-.buttom__txt
+.navegation__txt
   border-radius: 5px
   margin: 0
   padding: 0
@@ -82,4 +78,17 @@ export default {
   height: 30px
   text-align: center
   background-color: white
+
+.buttons
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+.buttons__name
+  color: white
+
+.current
+  box-shadow: 10px 10px 40px rgba(142, 179, 241, 0.8)
+
 </style>
