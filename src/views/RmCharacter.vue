@@ -2,8 +2,9 @@
 
 .container 
   rm-navegation-character(v-on:change="getNew" v-bind:button="buttons")
+
   div.container__body
-      rm-card(v-for="d in data" :info="d",)
+      rm-card(v-for="d in data" :info="d")
 
   .container__footer
     rm-navegation-character(v-on:change="getNew" v-bind:button="buttons")
@@ -25,9 +26,6 @@ export default {
     return {
       data: [],
       info: [],
-      btnPrev: null,
-      btnNext: null,
-      pages: null,
       buttons: {
         first : 1,
         prev: null,
@@ -44,7 +42,6 @@ export default {
      * 
      */
     info(){
-      // Muy lento buscar otro forma
        this.updateButtonsNav()
     }
   },
@@ -59,6 +56,8 @@ export default {
       this.updateButtonsNav();
     },
 
+    //Esta funcion se llama en created y en el evento emitido por el componente hijo
+    //RmNavegationCharacter,
     getData(url = null) {
       character
         .getCharacter(url)
@@ -70,12 +69,11 @@ export default {
         .catch((error) => console.log(error));
     },
 
-    //Esta funcion se llama en created y en el evento emitido por el componente hijo
-    //RmNavegationCharacter,
+
     updateButtonsNav(){
-      // Funcion wtacher de info, informacion de botontes, next y prev
+      // Funcion watcher de info, informacion de botontes, next y prev
       // tambien se usa cuando se da click desde el componente hijo, para actualizar 
-      // de nuevo los botones ya que cambien en cada click segun la pag, seleccionada.
+      // de nuevo los botones ya que cambian en cada click segun la pag, seleccionada.
       if(this.info.next){
         
         // se extrae ultimo digito de la url  y de la pagina siguiente,
