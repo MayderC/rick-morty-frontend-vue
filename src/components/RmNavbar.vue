@@ -9,6 +9,7 @@ nav.navbar(:class="{zindex: !isMenuClose}")#nav
     li.navbar__item
       router-link(to="/character" class="navbar__link" @click="ShowMobileMenu")
         p Character
+
   .menu__btn(@click="ShowMobileMenu" )#menu--btn
     .menu__btn-bar
 </template>
@@ -133,7 +134,7 @@ img:hover
 
   .menu--responsive
     display: block
-    height: 290px
+    
     margin: auto
 
   .img-container
@@ -146,7 +147,7 @@ img:hover
 
   .responsive
     display: block
-    height: 300px
+    height: auto
 
   .zindex
     position: absolute
