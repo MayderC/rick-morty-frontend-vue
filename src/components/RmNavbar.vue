@@ -9,12 +9,6 @@ nav.navbar(:class="{zindex: !isMenuClose}")#nav
     li.navbar__item
       router-link(to="/character" class="navbar__link" @click="ShowMobileMenu")
         p Character
-    li.navbar__item
-      router-link(to="/location" class="navbar__link" @click="ShowMobileMenu") 
-        p Location
-    li.navbar__item
-      router-link(to="/episodes" class="navbar__link" @click="ShowMobileMenu")
-        p Episode
   .menu__btn(@click="ShowMobileMenu" )#menu--btn
     .menu__btn-bar
 </template>
