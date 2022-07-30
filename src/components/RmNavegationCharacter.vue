@@ -24,16 +24,9 @@ export default {
 
   methods: {
     changePage(id) {
-
-      if(id && id != this.button.current){
-        window.scrollTo(0, 0);
-
-        console.log(this.button)
-
-        console.log(id)
-        this.$emit("change", id);
-      }
-
+      if(!id || id == this.button.current) return
+      window.scrollTo(0, 0);
+      this.$emit("change", id);
     },
   },
 

@@ -25,13 +25,13 @@ export default {
   data() {
     return {
       data: [],
-      info: [],
+      info: {},
       buttons: {
         first : 1,
         prev: null,
         current: 0,
         next : 0,
-        latest : 34
+        latest : 0
       }
     };
   },
@@ -63,14 +63,15 @@ export default {
         .getCharacter(url)
         .then((response) => {
           this.data = response.data.results;
-          this.info = response.data.info;
-          this.pages = this.info.count;
+          this.info = response.data.info; 
+          console.log(this.info);     
         })
         .catch((error) => console.log(error));
     },
 
 
     updateButtonsNav(){
+       this.buttons.latest = this.info.pages
       // Funcion watcher de info, informacion de botontes, next y prev
       // tambien se usa cuando se da click desde el componente hijo, para actualizar 
       // de nuevo los botones ya que cambian en cada click segun la pag, seleccionada.
@@ -78,7 +79,8 @@ export default {
         
         // se extrae ultimo digito de la url  y de la pagina siguiente,
         // de esta manera se obtiene el actual cuando existe el siguiente.
-        let current = this.info.next.split("=")[1]-1;
+        let current = Number(this.info.next.split("=")[1]-1)
+        console.log(Number(current));
         this.buttons.current = current
         this.buttons.next = current+1
 
@@ -95,7 +97,7 @@ export default {
         this.buttons.prev = current-1
         this.buttons.current = current
 
-        if(current ==34)this.buttons.next = null
+        if(current == this.buttons.latest)this.buttons.next = null
 
       }
     }
