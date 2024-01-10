@@ -2,7 +2,6 @@
 main
   rm-navbar
   router-view
-  rm-footer
 </template>
 
 <script>

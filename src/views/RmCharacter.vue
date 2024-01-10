@@ -36,13 +36,9 @@ export default {
     };
   },
   watch: {
-    /**
-     * Cuando se actualiza o se ingresa un valor en info, que contiene informacion de la paginacion
-     * el objeto buttons adquiere los nuevos valores para pasarlo por props al componente de navengacion/paginacion
-     * 
-     */
     info(){
        this.updateButtonsNav()
+       console.log(this.buttons);
     }
   },
   created() {
@@ -56,49 +52,34 @@ export default {
       this.updateButtonsNav();
     },
 
-    //Esta funcion se llama en created y en el evento emitido por el componente hijo
-    //RmNavegationCharacter,
     getData(url = null) {
       character
         .getCharacter(url)
         .then((response) => {
           this.data = response.data.results;
-          this.info = response.data.info; 
-          console.log(this.info);     
+          this.info = response.data.info;     
         })
         .catch((error) => console.log(error));
     },
 
 
     updateButtonsNav(){
-       this.buttons.latest = this.info.pages
-      // Funcion watcher de info, informacion de botontes, next y prev
-      // tambien se usa cuando se da click desde el componente hijo, para actualizar 
-      // de nuevo los botones ya que cambian en cada click segun la pag, seleccionada.
+      this.buttons.latest = this.info.pages
+
       if(this.info.next){
-        
-        // se extrae ultimo digito de la url  y de la pagina siguiente,
-        // de esta manera se obtiene el actual cuando existe el siguiente.
         let current = Number(this.info.next.split("=")[1]-1)
         console.log(Number(current));
         this.buttons.current = current
         this.buttons.next = current+1
 
-        // define los valres de prev, cuando no existe porque el actual es el primero, es null
-        // en cada iteracion cuando si existe sera el actual -1
         if(current >= 2)this.buttons.prev = current -1
         if(current == 1)this.buttons.prev = null
 
       }else if(!this.info.next && this.info.prev){
-
-
-
         let current = parseInt(this.info.prev.split("=")[1])+1
         this.buttons.prev = current-1
         this.buttons.current = current
-
         if(current == this.buttons.latest)this.buttons.next = null
-
       }
     }
 

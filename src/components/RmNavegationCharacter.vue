@@ -2,9 +2,13 @@
 nav.navegation
   ul.navegation__list
     li(v-for="b, i in button").navegation__item
-      router-link(:to="{ name: 'pages'}"   @click="changePage(b)").navegation__link
+      router-link(:to="{ name: 'pages'}" v-if=" (b != null && (b !== button.current)) || i === 'current'"    @click="changePage(b)").navegation__link
         div.buttons
           p(:class="{current: i == 'current' }").navegation__txt {{b}}
+          p.buttons__name {{i}}
+      div(v-else).navegation__link
+        div.buttons
+          p(:class="{current: i == 'current' }").navegation__txt {{}}
           p.buttons__name {{i}}
         
 </template>

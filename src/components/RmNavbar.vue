@@ -37,12 +37,12 @@ export default {
 
 <style lang="sass" scoped>
 .img-container
-  height: 90px
+  height: 70px
   display: flex
   align-items: center
 
 img
-  max-height: 60%
+  max-height: 50%
   transition: transform .3s
 
 img:hover
@@ -117,7 +117,7 @@ img:hover
   transform: scale(1.1)
 
 .navbar__list
-  height: 90px
+  height: 60px
 
   .navbar__item
     height: 90px
