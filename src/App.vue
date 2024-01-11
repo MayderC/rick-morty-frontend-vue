@@ -22,6 +22,8 @@ export default {
 html
   scroll-behavior: smooth
 
+.main
+  position: relative
 
 body
   font-family: 'Yomogi', cursive

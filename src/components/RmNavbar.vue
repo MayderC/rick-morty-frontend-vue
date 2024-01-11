@@ -55,6 +55,7 @@ img:hover
   display: flex
   justify-content: space-around
   box-shadow: 0px 10px 40px #15121b
+  z-index: 10
 
 .menu__btn
   height: 50px
@@ -127,6 +128,7 @@ img:hover
   .navbar
     display: block
     overflow: hidden
+    position: absolute
 
   .navbar__list
     display: none
