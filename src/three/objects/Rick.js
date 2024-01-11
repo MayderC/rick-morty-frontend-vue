@@ -16,6 +16,7 @@ export class Rick {
     this.glb = await loader.load("/rick.glb");
     this.addToScene();
     this.setAnimation();
+    return this.glb;
   }
 
   setAnimation() {

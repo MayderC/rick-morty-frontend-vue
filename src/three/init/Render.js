@@ -1,8 +1,11 @@
-import { WebGLRenderer } from "three";
+import { WebGLRenderer, PCFSoftShadowMap } from "three";
 
 export class Render extends WebGLRenderer {
   constructor(camera, scene, id) {
     super({ antialias: true, alpha: true, canvas: document.querySelector(id) });
+    this.shadowMap.enabled = true;
+    this.shadowMap.type = PCFSoftShadowMap;
+
     this.setSize(window.innerWidth, window.innerHeight);
     this.camera = camera;
     this.scene = scene;
@@ -18,9 +21,6 @@ export class Render extends WebGLRenderer {
     window.addEventListener("resize", () => {
       this.setSize(window.innerWidth, window.innerHeight);
       this.camera.update();
-      document.getElementById("canvas").style.width = window.innerWidth;
-      document.getElementById("canvas").style.height = window.innerHeight;
-      console.log(window.innerWidth, window.innerHeight);
     });
   }
 }
